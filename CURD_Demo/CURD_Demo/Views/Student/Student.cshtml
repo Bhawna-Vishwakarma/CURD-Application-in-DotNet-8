@@ -1,0 +1,54 @@
+﻿@model IEnumerable<CURD_Demo.Models.Student>
+@{
+    ViewData["Title"] = "Students";
+}
+
+<h2>Student List</h2>
+
+<div>
+	<a asp-action="Create" class="btn btn-primary">Add New Student</a>
+</div>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Name)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Email)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Age)
+			</th>
+			<th>
+				Actions
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var student in Model)
+		{
+			<tr>
+				<td>
+					@{
+						@student.Name
+					}
+				</td>
+				<td>
+					@{
+						@student.Email
+					}
+				</td>
+				<td>
+					@{
+						@student.Age
+					}
+				</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@student.Id">Edit</a> |
+					<a asp-action="Delete" asp-route-id="@student.Id">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

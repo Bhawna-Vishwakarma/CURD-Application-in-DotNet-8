@@ -1,0 +1,26 @@
+﻿@model CURD_Demo.Models.Student
+@{
+	ViewData["Title"] = "Create Student";
+}
+
+<h2>Add Student</h2>
+<form asp-action="Create" method="post">
+	<div class="form-group">
+		<label for="Name" class="form-label"></label>
+		<input name="Name" placeholder="Enter Your Name" class="form-control" />
+		<span class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label for="Email" class="control-label"></label>
+		<input name="Email" placeholder="Enter Your Email" class="form-control" />
+		<span class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label for="Age" class="control-label"></label>
+		<input name="Age" placeholder="Enter Your Age" class="form-control" />
+		<span class="text-danger"></span>
+	</div>
+	<button type="submit" class="btn btn-primary">Create</button>
+	<a asp-action="Student">Back</a>
+</form>
+
